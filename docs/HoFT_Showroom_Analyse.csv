@@ -1,0 +1,31 @@
+Priorität;Kategorie;Maßnahme;Beschreibung;Aufwand;Status
+Hoch;Architektur;Design System extrahieren;cssVars-Objekt in gemeinsames Modul auslagern. Entfernt ~1.200 Zeilen Duplizierung und ermöglicht zentrale Theme-Verwaltung.;Mittel;Offen
+Hoch;UX;Responsive Design;Mobile Breakpoints implementieren (< 640px, 640-1024px, > 1024px). Aktuell keine mobile Unterstützung.;Hoch;Offen
+Hoch;Performance;Code Splitting;React.lazy() und Suspense für Lazy Loading der Stationen. Reduziert initiales Bundle um ~75%.;Niedrig;Offen
+Hoch;State;LocalStorage Persistenz;usePersistedState Hook implementieren um Benutzerfortschritt zu speichern.;Niedrig;Offen
+Hoch;State;Zentralisierter State;React Context oder Zustand für stationenübergreifende Datenfreigabe (CFPB Score, Portfolio, etc.).;Mittel;Offen
+Mittel;Architektur;Component Library;Gemeinsame UI-Komponenten (Card, Button, ProgressBar, Slider) in wiederverwendbare Komponenten extrahieren.;Hoch;Offen
+Mittel;Architektur;Routing implementieren;react-router-dom für Browser-Navigation, Deep Linking und URL-Sharing.;Mittel;Offen
+Mittel;Testing;Unit Tests;Vitest für Berechnungslogik (CFPB, Monte Carlo, Zinseszins).;Mittel;Offen
+Mittel;Testing;Component Tests;React Testing Library für Komponenten-Tests.;Mittel;Offen
+Mittel;UX;Barrierefreiheit (a11y);ARIA-Labels, Tastaturnavigation, Fokus-Indikatoren, Farbkontrast-Prüfung.;Mittel;Offen
+Mittel;UX;Animierte Übergänge;framer-motion für sanfte Sektionswechsel statt abrupter Änderungen.;Niedrig;Offen
+Mittel;UX;Fortschrittsanzeige;Visuelle Journey-Map über alle 4 Stationen mit Completion-Status.;Niedrig;Offen
+Mittel;DX;TypeScript Migration;Type Safety für Finanzberechnungen und bessere IDE-Unterstützung.;Hoch;Offen
+Mittel;DX;ESLint & Prettier;Konsistenter Code-Stil und automatische Qualitätssicherung.;Niedrig;Offen
+Mittel;Performance;Memoization;useMemo für teure Berechnungen (Monte Carlo, Projektionen).;Niedrig;Offen
+Mittel;Architektur;Berechnungslogik extrahieren;Finanzberechnungen in separate Utility-Module (cfpb.js, monteCarlo.js, etc.).;Mittel;Offen
+Mittel;Daten;Datenvalidierung;Zod oder Yup für Schema-basierte Eingabevalidierung.;Niedrig;Offen
+Niedrig;Feature;PDF Export;Personalisierter Finanzplan als PDF mit @react-pdf/renderer.;Mittel;Offen
+Niedrig;Feature;Mehrsprachigkeit (i18n);react-i18next für Deutsch/Englisch Unterstützung.;Hoch;Offen
+Niedrig;Feature;Authentifizierung;Supabase/Firebase Auth für Benutzerkonten und Fortschrittssync.;Hoch;Offen
+Niedrig;Feature;Analytics;Plausible oder PostHog für Nutzungsanalyse und Conversion-Tracking.;Mittel;Offen
+Niedrig;Feature;Gamification;Badges, Streaks und Leaderboards für Engagement.;Mittel;Offen
+Niedrig;DX;Storybook;Komponenten-Dokumentation und visuelles Testing.;Mittel;Offen
+Niedrig;Daten;API Integration;Backend-Anbindung für echte Marktdaten, ESG-Ratings und Community-Scores.;Hoch;Offen
+Niedrig;Testing;E2E Tests;Playwright für End-to-End User Journey Tests.;Mittel;Offen
+Quick Win;Architektur;cssVars Shared File;Design-Tokens in src/styles/tokens.js auslagern.;Niedrig;Offen
+Quick Win;Performance;React.lazy() hinzufügen;Lazy Loading für alle 4 Station-Komponenten.;Niedrig;Offen
+Quick Win;State;usePersistedState Hook;Custom Hook für automatische localStorage-Speicherung.;Niedrig;Offen
+Quick Win;SEO;Meta-Tags ergänzen;Title, Description und Open Graph Tags in index.html.;Niedrig;Offen
+Quick Win;UX;Loading States;Ladeanzeigen während Simulationen und Berechnungen.;Niedrig;Offen

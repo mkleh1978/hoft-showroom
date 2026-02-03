@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { UserProvider } from './context/UserContext';
 import FinancialEducation from './stations/FinancialEducation';
 import FinancialFoundation from './stations/FinancialFoundation';
 import Protection from './stations/Protection';
@@ -400,44 +401,52 @@ const App = () => {
     setCurrentStation(null);
   };
 
-  // Render current station or menu
-  if (currentStation === 'education') {
-    return (
-      <>
-        <FinancialEducation />
-        <BackToMenuButton onBack={handleBackToMenu} />
-      </>
-    );
-  }
+  // Determine content based on current station
+  const renderContent = () => {
+    if (currentStation === 'education') {
+      return (
+        <>
+          <FinancialEducation />
+          <BackToMenuButton onBack={handleBackToMenu} />
+        </>
+      );
+    }
 
-  if (currentStation === 'foundation') {
-    return (
-      <>
-        <FinancialFoundation />
-        <BackToMenuButton onBack={handleBackToMenu} />
-      </>
-    );
-  }
+    if (currentStation === 'foundation') {
+      return (
+        <>
+          <FinancialFoundation />
+          <BackToMenuButton onBack={handleBackToMenu} />
+        </>
+      );
+    }
 
-  if (currentStation === 'protection') {
-    return (
-      <>
-        <Protection />
-        <BackToMenuButton onBack={handleBackToMenu} />
-      </>
-    );
-  }
+    if (currentStation === 'protection') {
+      return (
+        <>
+          <Protection />
+          <BackToMenuButton onBack={handleBackToMenu} />
+        </>
+      );
+    }
 
-  if (currentStation === 'investment') {
-    return (
-      <>
-        <Investment />
-        <BackToMenuButton onBack={handleBackToMenu} />
-      </>
-    );
-  }
+    if (currentStation === 'investment') {
+      return (
+        <>
+          <Investment />
+          <BackToMenuButton onBack={handleBackToMenu} />
+        </>
+      );
+    }
 
-  return <MainMenu onSelectStation={setCurrentStation} />;
+    return <MainMenu onSelectStation={setCurrentStation} />;
+  };
+
+  return (
+    <UserProvider>
+      {renderContent()}
+    </UserProvider>
+  );
 };
 
 export default App;
